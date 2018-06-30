@@ -2,14 +2,14 @@
     include("config.php");
     session_start();
   
-    if(isset($_POST['submit']) 
+    if(isset($_POST['submit']))
     {
       $uname = mysqli_real_escape_string($db,$_POST['username']);
       $pwd = mysqli_real_escape_string($db,$_POST['password']); 
     
       if (empty($uname) || empty($pwd))
       {
-        header("Location: index.php?login=empty")
+        header("Location: index.html?login=empty");
         exit();
       } 
 
@@ -29,13 +29,13 @@
       }
       else 
       {
-        header("Location: index.php?login=error")
+        header("Location: index.html?login=error");
         exit();
       }
     }
     else
     {
-      header("Location: index.php?login=error")
+      header("Location: index.html?login=error");
       exit();
     }
 ?>

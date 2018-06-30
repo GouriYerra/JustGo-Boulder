@@ -64,56 +64,11 @@
         <p>Enter your username and password below:</p>     
           <form action="login.php" method="post">
               <p><span>Username: </span><input type="text" name="username" value="" /></p>
-               <p><span>Password: </span><input type="text" name="password" value="" /></p>
+              <p><span>Password: </span><input type="text" name="password" value="" /></p>
               <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
           </form>  
-
-          <?php
-          $user1 = "Yasmeen";
-          $user2 = "Kyle";
-          $user3 = "Kyle2";
-          $user4 = "Gouri";
-          $user5 = "Ali";
-  
-          $password1 = "Yasmeen";
-          $password2 = "Kyle";
-          $password3 = "Kyle2";
-          $password4 = "Gouri";
-          $password5 = "Ali";
-
-		  if(!$_POST['username'] || !$_POST['password']) {
-                die('Some fields have been left blank');
-          }
-  
-  if (isset ( $_POST ['username'] ) &&  (isset ( $_POST ['password'] ))) {
-  
-	$username=$_POST['username'];
-	$password=$_POST['password'];
-	
-	if(($username==$user1) && (md5($password)==$password1) || ($username==$user2) && (md5($password)==$password2)) {
-	  echo "Login Successful";
-	
-	 } else{
-	   die('Username and password do not match, please try again!');
-	}
-  }
-  ?>
-  </div>
+      </div>
  
-  <div>  
- <div class="footer">
-<?php if (! isset ( $_SESSION ['startTime'] )) {
-	$_SESSION ['startTime'] = time ();
-}
-?>
- <p>User <?php echo $_SESSION['username'] ?> 
-	 logged in for
-	 <?php echo time() - $_SESSION['startTime']?> seconds.
-	 
-	 <span style="font-style:italics"></span>
-	  </p>
- </div> 
-  </div>
           <!--<div class="form_settings">
             <p><span>Name</span><input class="contact" type="text" name="your_name" value="" /></p>
             <p><span>Email Address</span><input class="contact" type="text" name="your_email" value="" /></p>
