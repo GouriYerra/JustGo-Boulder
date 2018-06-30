@@ -1,11 +1,11 @@
 
 #Load Admins
-insert into Admins (adminUser, adminPass, firstName, lastName) values
-	('alos','ao', 'Ali', 'Ostlund'),
-	('goye','gy', 'Gouri', 'Yerra'),
-	('kygr','kg', 'Kyle', 'Gronberg'),
-	('kywa','kw', 'Kyle', 'Ward'),
-	('yaal','ya', 'Yasmin', 'Alshafai');
+insert into Admins (adminPass, firstName, lastName) values
+	('ao', 'Ali', 'Ostlund'),
+	('gy', 'Gouri', 'Yerra'),
+	('kg', 'Kyle', 'Gronberg'),
+	('kw', 'Kyle', 'Ward'),
+	('ya', 'Yasmin', 'Alshafai');
 
 #Load Users
 insert into Users (userEmail, firstName, lastName) values
