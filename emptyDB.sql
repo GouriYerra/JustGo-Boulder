@@ -1,3 +1,4 @@
+drop database justgoboulder;
 CREATE SCHEMA JustGoBoulder;
 USE JustGoBoulder;
 CREATE TABLE Admins (
@@ -30,11 +31,6 @@ CREATE TABLE Addresses(
     zip varchar(5),
     PRIMARY KEY (addressID)
     );
-CREATE TABLE Comments(
-	commentID int auto_increment,
-    commentTime timestamp DEFAULT current_timestamp,
-    primary key (commentID)
-    );
 CREATE TABLE Attractions (
 	attractionID int auto_increment, 
     attractionName varchar(100), 
@@ -44,10 +40,17 @@ CREATE TABLE Attractions (
     picture varchar(256),
     phoneNumber varchar(13),
     pricing int,
-    commentID int,
     PRIMARY KEY (attractionID),
-    FOREIGN KEY (addressID) REFERENCES Addresses(addressID),
-    FOREIGN KEY (commentID) REFERENCES Comments(commentID)
+    FOREIGN KEY (addressID) REFERENCES Addresses(addressID)
+    );
+CREATE TABLE Comments(
+	commentID int auto_increment,
+    commentTime timestamp DEFAULT current_timestamp,
+    userID int,
+    attractionID int,
+    primary key (commentID),
+    foreign key (userID) references Users(userID),
+    FOREIGN KEY (attractionID) references Attractions(attractionID)
     );
 CREATE TABLE UsersAttractionsInfo (
 	userID int,
