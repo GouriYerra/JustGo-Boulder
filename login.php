@@ -1,7 +1,6 @@
 <?php
     include("config.php");
     session_start();
-  
     if(isset($_POST['submit']))
     {
       $uname = mysqli_real_escape_string($db,$_POST['username']);
@@ -9,7 +8,7 @@
     
       if (empty($uname) || empty($pwd))
       {
-        header("Location: index.html?login=empty");
+        header("Location: ./index.html?login=empty");
         exit();
       } 
 
@@ -21,21 +20,20 @@
 
       if ($count == 1)
       {
-        session_register("row['firstName']");
+        $_SESSION['adminID'] = $row['adminID'];
         $_SESSION['login_admin'] = $row['firstName'];
 
-        header("Location: welcome.php");
+        header("Location: ./index.html?login=success");
         exit();
       }
       else 
       {
-        header("Location: index.html?login=error");
+        header("Location: ./index.html?login=error");
         exit();
       }
     }
-    else
     {
-      header("Location: index.html?login=error");
+      header("Location: ./index.html?login=idkwat");
       exit();
     }
 ?>
