@@ -3,16 +3,16 @@ CREATE SCHEMA JustGoBoulder;
 USE JustGoBoulder;
 CREATE TABLE Admins (
 	adminID int auto_increment, 
-    adminPass varchar(25), 
-    firstName varchar(100), 
-    lastName varchar(100),
+    adminPass varchar(25) NOT NULL, 
+    firstName varchar(100) NOT NULL, 
+    lastName varchar(100) NOT NULL,
     PRIMARY KEY (adminID)
     );
 CREATE TABLE Users (
 	userID int auto_increment, 
-    userEmail varchar(100), 
-    firstName varchar(100), 
-    lastName varchar(100), 
+    userEmail varchar(100) NOT NULL, 
+    firstName varchar(100) NOT NULL, 
+    lastName varchar(100) NOT NULL, 
     PRIMARY KEY (userID)
     );
 CREATE TABLE AdminsUsersInfo (
@@ -33,13 +33,13 @@ CREATE TABLE Addresses(
     );
 CREATE TABLE Attractions (
 	attractionID int auto_increment, 
-    attractionName varchar(100), 
-    category varchar(25),
-    description varchar(256),
+    attractionName varchar(100) NOT NULL, 
+    category varchar(25) NOT NULL,
+    description varchar(256) NOT NULL,
     addressID int,
     picture varchar(256),
     phoneNumber varchar(13),
-    pricing int,
+    pricing int NOT NULL,
     PRIMARY KEY (attractionID),
     FOREIGN KEY (addressID) REFERENCES Addresses(addressID)
     );

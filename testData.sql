@@ -1,33 +1,37 @@
 
 #Load Admins
-insert into Admins (adminID, adminPass, firstName, lastName) values
-	(1, 'ao', 'Ali', 'Ostlund'),
-	(2, 'gy', 'Gouri', 'Yerra'),
-	(3, 'kg', 'Kyle', 'Gronberg'),
-	(4, 'kw', 'Kyle', 'Ward'),
-	(5, 'ya', 'Yasmin', 'Alshafai');
+insert into Admins (adminPass, firstName, lastName) values
+	('ao', 'Ali', 'Ostlund'),
+	('gy', 'Gouri', 'Yerra'),
+	('kg', 'Kyle', 'Gronberg'),
+	('kw', 'Kyle', 'Ward'),
+	('ya', 'Yasmin', 'Alshafai');
 
 #Load Users
-insert into Users (userID, userEmail, firstName, lastName) values
-	(1, 'skipity@doda.com', 'Jane', 'Doe'),
-	(2, 'skipity@day.com', 'John', 'Doh');
+insert into Users (userEmail, firstName, lastName) values
+	('skipity@doda.com', 'Jane', 'Doe'),
+	('skipity@day.com', 'John', 'Doh');
 
 
 #load Addresses
-insert into Addresses (AddressID, streetNumber, streetName, unitNumber,
+insert into Addresses (streetNumber, streetName, unitNumber,
 	city, state, zip) values
-	(1, 1001, 'Pearl Street', null, 'Boulder', 'CO', '80302'),
-	(2, 4800, '28th Street', null, 'Boulder', 'CO', '80301');
+	(1001, 'Pearl Street', null, 'Boulder', 'CO', '80302'),
+	(4800, '28th Street', null, 'Boulder', 'CO', '80301'),
+    (NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 
 #Load Attractions
-insert into Attractions (attractionID, attractionName, category, 
-	description, addressID, picture, phoneNumber, pricing, commentID) values
-	(1, 'PastaJays', 'food', 'Family oriented Italian-American restar
-	aunt', 1, 'pastajays.com', '3034445800', 5, 1),
-	(2, 'Gateway Park', 'fun', 'Arcade', 2, 'gateway.com', '3034424386',
-	3, 2),
-	(3, 'Sanitas', 'outdoors', 'Moderately easy, beautiful hike at the 
-		edge of Boulder', null, 'boulder.com', null, 0, null);
+insert into Attractions (attractionName, category, 
+	description, addressID, picture, phoneNumber, pricing) values
+	('PastaJays', 'Food', 'Family oriented Italian-American restar
+	aunt', 1, 'pastajays.com', '3034445800', 5),
+	('Gateway Park', 'Fun', 'Arcade', 2, 'gateway.com', '3034424386',
+	3),
+	('Sanitas', 'Outdoors', 'Moderately easy, beautiful hike at the 
+		edge of Boulder', 3, 'boulder.com', null, 0);
 
+insert into Comments (userID, attractionID) values
+	(1, 1),
+    (2, 2);
