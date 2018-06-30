@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Contact GoBoulder</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">GO<span class="logo_colour">Boulder</span></a></h1>
+          <h2>To fit all your Boulder needs!</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Outdoors.html">Outdoors</a></li>
+          <li><a href="Shopping.html">Shopping</a></li>
+          <li><a href="Dining.html">Dining</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li class="selected"><a href="LogIn.html">Admin Only</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+            <h3>Latest News</h3>
+            <h4>Event on ***</h4>
+            <h5>6/26/18</h5>
+            <p> 2018 sees the advent of our new travel website<br /><a href="#">Read more</a></p>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h3>Search</h3>
+            <form method="post" action="#" id="search_form">
+              <p>
+                <input class="search" type="text" name="search_field" value="Enter keywords....." />
+              </p>
+            </form>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Please log in</h1>
+        <p>Enter your username and password below:</p>     
+          <form action="login.php" method="post">
+              <p><span>Username: </span><input type="text" name="username" value="" /></p>
+               <p><span>Password: </span><input type="text" name="password" value="" /></p>
+              <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
+          </form>  
+
+          <?php
+          $user1 = "Yasmeen";
+          $user2 = "Kyle";
+          $user3 = "Kyle2";
+          $user4 = "Gouri";
+          $user5 = "Ali";
+  
+          $password1 = "Yasmeen";
+          $password2 = "Kyle";
+          $password3 = "Kyle2";
+          $password4 = "Gouri";
+          $password5 = "Ali";
+
+		  if(!$_POST['username'] || !$_POST['password']) {
+                die('Some fields have been left blank');
+          }
+  
+  if (isset ( $_POST ['username'] ) &&  (isset ( $_POST ['password'] ))) {
+  
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	
+	if(($username==$user1) && (md5($password)==$password1) || ($username==$user2) && (md5($password)==$password2)) {
+	  echo "Login Successful";
+	
+	 } else{
+	   die('Username and password do not match, please try again!');
+	}
+  }
+  ?>
+  </div>
+ 
+  <div>  
+ <div class="footer">
+<?php if (! isset ( $_SESSION ['startTime'] )) {
+	$_SESSION ['startTime'] = time ();
+}
+?>
+ <p>User <?php echo $_SESSION['username'] ?> 
+	 logged in for
+	 <?php echo time() - $_SESSION['startTime']?> seconds.
+	 
+	 <span style="font-style:italics"></span>
+	  </p>
+ </div> 
+  </div>
+          <!--<div class="form_settings">
+            <p><span>Name</span><input class="contact" type="text" name="your_name" value="" /></p>
+            <p><span>Email Address</span><input class="contact" type="text" name="your_email" value="" /></p>
+            <p><span>Message</span><textarea class="contact textarea" rows="8" cols="50" name="your_enquiry"></textarea></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
+          </div>  -->     
+<!--        We have to figure out how to email the input to an email address.-->
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+      <p>Copyright &copy; CU Boulder</p>
+    </div>
+  </div>
+</body>
+</html>
