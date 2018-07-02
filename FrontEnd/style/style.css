@@ -1,9 +1,6 @@
 html
 {
-  height: 100%;
-
-
-}
+  height: 100%;}
 
 *
 { margin: 0;
@@ -22,7 +19,6 @@ p
 
 img
 { border: 0;}
-
 
 
 h1, h2, h3
@@ -82,18 +78,7 @@ ol li
   text-align: center;
   margin: 20px auto;}
 
-.column
-{
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-.row
-{
-  content:" ";
-  clear: both;
-  display:table;
-}
+
 
 #main, #logo, #menubar, #site_content, #footer
 { margin-left: auto;
@@ -110,6 +95,7 @@ ol li
 
 
 }
+
 #banner
 {  background: transparent url(banner.jpg) no-repeat;
   width: 860px;
@@ -138,7 +124,7 @@ ol li
 #logo_text h2
 { font-size: 120%;
   padding: 4px 0 0 0;
-  color: #E4EC04 ;}
+  color:white;}
 
 #menubar
 { width: 880px;
