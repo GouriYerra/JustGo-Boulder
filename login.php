@@ -1,7 +1,6 @@
 <?php
     include("config.php");
     session_start();
-  
     if(isset($_POST['submit']))
     {
       $uname = mysqli_real_escape_string($db,$_POST['username']);
@@ -9,33 +8,32 @@
     
       if (empty($uname) || empty($pwd))
       {
-        header("Location: index.html?login=empty");
+        header("Location: ./index.html?login=empty");
         exit();
       } 
 
-      $sql = "SELECT adminID FROM admins WHERE adminUser = '$uname' and adminPass = '$pwd'";
+      $sql = "SELECT * FROM admins WHERE adminUser = '$uname' and adminPass = '$pwd'";
       $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $row = mysqli_fetch_array($result);
 
       $count = mysqli_num_rows($result);
 
       if ($count == 1)
       {
-        session_register("row['firstName']");
+        $_SESSION['loggedin'] = true;
         $_SESSION['login_admin'] = $row['firstName'];
 
-        header("Location: welcome.php");
+        header("Location: ./admin/dash.php?login=success");
         exit();
       }
       else 
       {
-        header("Location: index.html?login=error");
+        header("Location: ./index.html?login=error");
         exit();
       }
     }
-    else
-    {
-      header("Location: index.html?login=error");
+    else {
+      header("Location: ./index.html?login=idkwat");
       exit();
     }
 ?>
