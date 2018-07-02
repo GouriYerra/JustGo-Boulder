@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Go Boulder</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
@@ -12,14 +14,16 @@
 <body>
   <div id="main">
     <div id="header">
+
       <div id="logo">
-        <div id="logo_text">
+        <div id="logo_text" >
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">GO<span class="logo_colour">Boulder</span></a></h1>
-          <h2>To fit all your Boulder needs!</h2>
+          <img src = "logo.png" alt ="GO BOULDER" height = "100px" width = "200px" >
+          <h2 style = " font-family: 'Open Sans Condensed', sans-serif;">To fit all your Boulder needs!</h2>
+
         </div>
       </div>
-      <div id="menubar">
+      <div id="menubar" style = " font-family: 'Open Sans Condensed', sans-serif;">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="index.html">Home</a></li>
@@ -31,37 +35,60 @@
         </ul>
       </div>
     </div>
+    <br>
+    <div id = "weather">
+      <a class="weatherwidget-io" href="https://forecast7.com/en/40d01n105d27/boulder/" data-label_1="BOULDER" data-label_2="WEATHER" data-font="Open Sans" data-days="3" data-theme="kiwi" >BOULDER WEATHER</a>
+  <script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  </script>
+    </div>
+
     <div id="content_header"></div>
     <div id="site_content">
-    <img src="style/banner.jpg" alt="flatirons" style="width:600px;height:250px;">
+      <h1 align ="center" style ="font-weight:bold; font-size:50px;  font-family: 'Open Sans Condensed', sans-serif; ">Welcome to Go Boulder  </h1>
+<!-- SLIDESHOW -->
+      <div class="slideshow-container">
+        <img class="mySlides" src="pic1.jpg" height = "500 px" width = "100%" >
+         <img class="mySlides" src="pic2.jpg" height = "500 px" width = "100%" >
+        <img class="mySlides" src="pic4.jpg" height = "500 px" width = "100%" >
+        <img class="mySlides" src="pic3.jpg" height = "500 px" width = "100%">
+
+
+      <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}
+          x[myIndex-1].style.display = "block";
+          setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+      </script>
+      </div>
+      <br>
 	  <div id="sidebar_container">
         <div class="sidebar">
           <div class="sidebar_top"></div>
           <div class="sidebar_item">
             <!-- insert your sidebar items here -->
+
             <h3>Latest News</h3>
-            <h4>Event on ***</h4>
-            <h5>6/26/18</h5>
-            <p> 2018 sees the advent of our new travel website<br /><a href="#">Read more</a></p>
+        <a class="twitter-timeline" data-height="600" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/bouldercolorado?ref_src=twsrc%5Etfw">Tweets by bouldercolorado</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
+
           <div class="sidebar_base"></div>
         </div>
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <h3>Search</h3>
-            <form method="post" action="#" id="search_form">
-              <p>
-                <input class="search" type="text" name="search_field" value="Enter keywords....." />
-              </p>
-            </form>
-          </div>
-          <div class="sidebar_base"></div>
-        </div>
+
       </div>
       <div id="content">
         <!-- insert the page content here -->
-        <h1>Welcome to BoulderGo</h1>
+
         <p>Welcome to the hottest travel website in town.</p>
         <h2>Locations</h2>
         <p>Here are the different tourist attractions:</p>
@@ -70,11 +97,17 @@
           <li>Chataqua</li>
           <li>CU Boulder</li>
         </ul>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97761.94816415176!2d-105.31018886847403!3d40.02942016050081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8d4e278dafd3%3A0xc8393b7ca01b8058!2sBoulder%2C+CO!5e0!3m2!1sen!2sus!4v1530390290959" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
     <div id="content_footer"></div>
+
     <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+      <a href="https://www.facebook.com/VisitBoulder/" class="fa fa-facebook"></a>
+      <a href="https://twitter.com/bouldercolorado?lang=en" class="fa fa-twitter"></a>
+      <a href="https://www.google.com/search?q=boulder+colorado&oq=boulder+colorado&aqs=chrome.0.69i59l3j69i60l3.2736j0j4&sourceid=chrome&ie=UTF-8" class="fa fa-google"></a>
+      <a href="https://www.instagram.com/bouldercolorado/?hl=en" class="fa fa-instagram"></a>
+      <p><a href="index.html">Home</a> | <a href="Outdoors.html">Outdoors</a> | <a href="Shopping.html">Shopping</a> | <a href="Dining.html">Dining</a> | <a href="contact.html">Contact Us</a></p>
       <p>Copyright &copy; CU Boulder</p>
     </div>
   </div>
