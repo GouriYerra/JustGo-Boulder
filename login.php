@@ -24,6 +24,7 @@
         $_SESSION['login_admin'] = $row['firstName'];
 
         header("Location: ./admin/dash.php?login=success");
+
         exit();
       }
       else 
