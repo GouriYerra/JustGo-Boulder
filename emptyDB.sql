@@ -37,18 +37,18 @@ CREATE TABLE Attractions (
     attractionName varchar(100) NOT NULL, 
     category varchar(25) NOT NULL,
     description varchar(256) NOT NULL,
-    addressID int,
     picture varchar(256),
     phoneNumber varchar(13),
     pricing int NOT NULL,
     PRIMARY KEY (attractionID),
-    FOREIGN KEY (addressID) REFERENCES Addresses(addressID)
+    FOREIGN KEY (attractionID) REFERENCES Addresses(addressID)
     );
 CREATE TABLE Comments(
 	commentID int auto_increment,
     commentTime timestamp DEFAULT current_timestamp,
     userID int,
     attractionID int,
+    comment varchar(256),
     primary key (commentID),
     foreign key (userID) references Users(userID),
     FOREIGN KEY (attractionID) references Attractions(attractionID)

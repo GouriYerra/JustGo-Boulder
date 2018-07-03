@@ -38,6 +38,8 @@
         </select>
         <input type="submit" id="tableSubmit" value="Submit"/>
     </form>
+    <br><br><br>
+    <!--<button type = "button" onclick="addatt.php#"> Add Attraction </button> -->
 <?php 
     if (isset($_POST['Tables']))
     {
@@ -90,6 +92,9 @@
                     <?php } 
         }
     } ?>
-    
+    <br>
+    <a href = "addatt.php"> Add Attraction </a>
+    <br>
+    <a href = "rematt.php"> Remove Attraction </a>
 </body>
 </html>
