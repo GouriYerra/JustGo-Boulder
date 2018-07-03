@@ -19,20 +19,20 @@ insert into Addresses (streetNumber, streetName, unitNumber,
 	(1001, 'Pearl Street', null, 'Boulder', 'CO', '80302'),
 	(4800, '28th Street', null, 'Boulder', 'CO', '80301'),
     (NULL, 'Sunshine Canyon Dr.', NULL, 'Boulder', 'CO', '80304');
+
 */
 
-
 #Load Attractions
-insert into Attractions (attractionName, category, 
-	description, picture, phoneNumber, pricing, streetNumber, streetName, unitNumber,
-	city, state, zip) values
-	('PastaJays', 'Food', 'Family oriented Italian-American restar
-	aunt', 'pastajays.com', '3034445800', 5, 1001, 'Pearl Street', null, 'Boulder', 'CO', '80302'),
-	('Gateway Park', 'Fun', 'Arcade', 'gateway.com', '3034424386',
-	3, 4800, '28th Street', null, 'Boulder', 'CO', '80301'),
-	('Sanitas', 'Outdoors', 'Moderately easy, beautiful hike at the 
-		edge of Boulder', 'boulder.com', null, 0, NULL, 'Sunshine Canyon Dr.', NULL, 'Boulder', 'CO', '80304');
+insert into Attractions (attractionName, category, description, picture, phoneNumber, 
+	pricing, streetNumber, streetName, unitNumber,city, state, zip) values
+	('PastaJays', 'Food', 'Family oriented Italian-American restaraunt', 'pastajays.com',
+		'3034445800', 5, 1001, 'Pearl Street', null, 'Boulder', 'CO', '80302'),
+	('Gateway Park', 'Fun', 'Arcade', 'gateway.com', '3034424386',3, 4800, '28th Street',
+		null, 'Boulder', 'CO', '80301'),
+	('Sanitas', 'Outdoors', 'Moderately easy, beautiful hike at the edge of Boulder',
+		'boulder.com', null, 0, NULL, 'Sunshine Canyon Dr.', NULL, 'Boulder', 'CO', '80304');
 
+#load comments
 insert into Comments (userID, attractionID, comment) values
 	(1, 1, 'this is a test comment'),
     (2, 2, 'this is test comment number 2');

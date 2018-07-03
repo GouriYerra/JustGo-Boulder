@@ -37,7 +37,6 @@ CREATE TABLE Attractions (
     state varchar(2),
     zip varchar(5),
     PRIMARY KEY (attractionID)
-    #FOREIGN KEY (attractionID) REFERENCES Addresses(addressID)
     );
 CREATE TABLE Comments(
 	commentID int auto_increment,

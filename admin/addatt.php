@@ -57,6 +57,7 @@
 	<?php
 		include_once("../config.php");
 		if(!empty($_POST)){
+			include_once("../config.php");
 			if( $db -> connect_error){
 				die("connect error: ".$db->connect_errno.": ".$db->connect_error);
 			}
