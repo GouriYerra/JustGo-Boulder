@@ -45,6 +45,7 @@
         $selection = $_POST['Tables'];
         $sql = "SELECT * FROM $selection";
         $results = mysqli_query($db,$sql);
+        $resultset = NUll;
         
         //https://stackoverflow.com/questions/29264574/how-to-echo-sql-table-data-in-auto-created-html-php-table
         if($results)
@@ -56,7 +57,7 @@
                 $resultset[] = $row;
             }
         
-            if( count($resultset > 0 )) {
+            if( count($resultset) > 0) {
                 ?>
                             <table class="table table-bordered" >
                                 <thead>

@@ -1,7 +1,7 @@
 <?php
     include("config.php");
     session_start();
-    if(isset($_POST['submit']))
+    if(isset($_POST['contact_submitted']))
     {
       $uname = mysqli_real_escape_string($db,$_POST['username']);
       $pwd = mysqli_real_escape_string($db,$_POST['password']); 
