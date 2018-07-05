@@ -1,0 +1,2 @@
+We did not apply continious intergration in our project, as our testing came towards the end. and because there are five group memeber 
+working on different segments of the code, using CI would have caused problems when pushing at the same time 
